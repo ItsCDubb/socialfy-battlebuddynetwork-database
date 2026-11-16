@@ -4,21 +4,25 @@ This repository is the canonical source of truth for the Battle Buddy Network Su
 
 ## Supabase project
 
-- Project reference: `szqxrqlybhwoniizgrjb`
+- Organization: Socialfy
+- Project: Battle Buddy Network
+- Project reference: `tsfzpmyrxhmcnxxepchw`
 - Supabase configuration: `supabase/config.toml`
-- Schema changes are maintained as ordered SQL migrations in `supabase/migrations/`.
+- Active schema changes belong in ordered SQL migrations in `supabase/migrations/`.
 
 ## Consumers
 
 - `socialfy-battlebuddynetwork-app`
 - `socialfy-battlebuddynetwork-support`
 
-Both applications must use the same Supabase project URL and publishable key through their own environment configuration. Do not place service-role or secret keys in browser applications.
+Both applications use the same Supabase project URL and publishable key through their own environment configuration. Never place a service-role or secret key in a browser application.
 
 ## Migration ownership
 
-All schema changes belong in this repository. Application repositories consume the shared database; they do not maintain independent schema migration histories.
+All database schema changes are maintained here. Consumer application repositories do not maintain independent migration histories.
 
-## Current baseline
+## Legacy schema reference
 
-The 10 existing migrations have been copied from the application repository into this repository. The original copies remain in the application repository temporarily; remove those after the hosted project is verified and this repository is confirmed as the active migration source. Before applying anything to the hosted project, compare the remote schema and migration history to avoid replaying already-applied changes.
+The original ten migrations from the former app-builder-generated implementation are retained under `supabase/reference/legacy_migrations/` for analysis only. They are not the active migration baseline and must not be applied as-is.
+
+The legacy implementation is a reference for feature intent and data relationships. Recreated schema must be reviewed for data exposure, row-level security, function privileges, and application compatibility before deployment.
