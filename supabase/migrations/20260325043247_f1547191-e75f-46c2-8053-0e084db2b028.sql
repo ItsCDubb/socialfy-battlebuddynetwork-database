@@ -1,0 +1,4 @@
+ALTER TABLE public.profiles
+  ADD COLUMN IF NOT EXISTS phone text DEFAULT NULL,
+  ADD COLUMN IF NOT EXISTS contact_email text DEFAULT NULL,
+  ADD COLUMN IF NOT EXISTS location text DEFAULT NULL;
