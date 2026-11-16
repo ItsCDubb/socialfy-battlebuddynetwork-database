@@ -21,4 +21,4 @@ All schema changes belong in this repository. Application repositories consume t
 
 ## Current baseline
 
-The initial migrations are being transferred from the application repository to establish the database repository as the canonical migration history. Before applying them to the hosted project, compare the remote schema and migration history to avoid replaying already-applied changes.
+The 10 existing migrations have been copied from the application repository into this repository. The original copies remain in the application repository temporarily; remove those after the hosted project is verified and this repository is confirmed as the active migration source. Before applying anything to the hosted project, compare the remote schema and migration history to avoid replaying already-applied changes.
